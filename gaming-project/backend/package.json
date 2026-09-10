@@ -1,6 +1,0 @@
-{
-  "scripts": {
-    "import-games": "node scripts/import-games.js"
-  }
-}
-

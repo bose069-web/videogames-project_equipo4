@@ -1,0 +1,35 @@
+/* Estilos globales iniciales para la interfaz principal de gaming-project. */
+:root {
+  font-family: Arial, sans-serif;
+  color: #f5f7fa;
+  background-color: #121820;
+}
+
+body {
+  margin: 0;
+  background: #121820;
+}
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+a {
+  color: #60a5fa;
+}
+
+.card {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type='search'] {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #4b5563;
+}
