@@ -1,0 +1,25 @@
+{
+  "name": "gaming-project-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Express API for gaming-project backed by Firestore.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "lint": "eslint .",
+    "import:games": "node scripts/importFromFirestore.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.6.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.10.0",
+    "@eslint/js": "^9.10.0",
+    "globals": "^15.9.0"
+  }
+}

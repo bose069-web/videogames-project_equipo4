@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop, 'feature/**']
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clona el código para ejecutar validaciones de integración.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Configura Node.js para instalación y build del monorepo.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            src/client/package-lock.json
+            src/server/package-lock.json
+
+      # Instala dependencias de frontend y backend.
+      - name: Install dependencies
+        run: npm run install:all
+
+      # Ejecuta lint para asegurar calidad mínima de código.
+      - name: Lint
+        run: npm run lint
+
+      # Construye frontend para validar artefacto de producción.
+      - name: Build
+        run: npm run build
